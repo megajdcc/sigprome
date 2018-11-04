@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="SigpromePU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>Modelo.Usuario</class>
+    <class>Modelo.Tipopaciente</class>
+    <class>Modelo.Persona_1</class>
+    <class>Modelo.Parroquia</class>
+    <class>Modelo.Tipousuario</class>
+    <class>Modelo.Estado</class>
+    <class>Modelo.Familia</class>
+    <class>Modelo.ModeloPaciente</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/sigprome"/>
+      <property name="javax.persistence.jdbc.user" value="Jhonatan"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="paterblat"/>
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.DialogFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="tipopersona">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="tipodeservicio">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="fecha">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[708, 452]"/>
+    </Property>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="closeDialog"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="panel5" min="-2" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="panel5" min="-2" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="org.edisoncor.gui.panel.Panel" name="panel5">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Vista/imagen/fondo-registros.png"/>
+        </Property>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[708, 452]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[708, 452]"/>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+      <SubComponents>
+        <Container class="org.edisoncor.gui.panel.Panel" name="header">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Vista/imagen/morbilidad.png"/>
+            </Property>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[708, 75]"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="" noResource="true"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[708, 75]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+              <BorderConstraints direction="North"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="footer">
+          <Properties>
+            <Property name="opaque" type="boolean" value="false"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[600, 78]"/>
+            </Property>
+            <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+              <BorderConstraints direction="South"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="Leyenda">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="14" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[0, 30]"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="Center"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Container class="javax.swing.JPanel" name="headfooter">
+              <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[600, 40]"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="North"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="Emitir">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Vista/imagen/reporte.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Emitir"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Cursor de Mano"/>
+                    </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[200, 30]"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="Salir">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Vista/imagen/salir1.1.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Salir"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Cursor de Mano"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[200, 30]"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="center">
+          <Properties>
+            <Property name="opaque" type="boolean" value="false"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[708, 75]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+              <BorderConstraints direction="Before"/>
+            </Constraint>
+          </Constraints>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="dcenter">
+              <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[600, 70]"/>
+                </Property>
+              </Properties>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout">
+                <Property name="verticalGap" type="int" value="3"/>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel11">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="HelveticaLT" size="24" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Reporte de Morbilidad"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="horizontalTextPosition" type="int" value="2"/>
+                    <Property name="iconTextGap" type="int" value="0"/>
+                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[600, 30]"/>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[600, 30]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[600, 30]"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="North"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Container class="javax.swing.JPanel" name="jPanel1">
+                  <Properties>
+                    <Property name="opaque" type="boolean" value="false"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="Center"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout">
+                    <Property name="verticalGap" type="int" value="5"/>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="jLabel3">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Reporte:"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                          <BorderConstraints direction="West"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JSeparator" name="jSeparator2">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                          <BorderConstraints direction="North"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="seleccion">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="3">
+                            <StringItem index="0" value="Seleccione"/>
+                            <StringItem index="1" value="Pacientes Vistos"/>
+                            <StringItem index="2" value="10 Principales Patolog&#xed;as"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                          <BorderConstraints direction="Center"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JTabbedPane" name="movimiento">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="a"/>
+              </AccessibilityProperties>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="Pacvistos">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[600, 134]"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Paciente Vistos">
+                        <Property name="tabTitle" type="java.lang.String" value="Paciente Vistos"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel1" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
+                                  <Component id="Todas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="estudiante" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Comunidad" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Empleado" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="todos" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cita" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="emergencia" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Calendario" min="-2" pref="136" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="90" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="Empleado" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="Comunidad" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="estudiante" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="Todas" min="-2" pref="20" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="emergencia" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="cita" min="-2" pref="20" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="Calendario" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="todos" min="-2" pref="20" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="jLabel17">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Dialog" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Filtrar:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel18">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Dialog" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Tipo de servicio"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JRadioButton" name="Empleado">
+                      <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="tipopersona"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Empleado"/>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JRadioButton" name="Comunidad">
+                      <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="tipopersona"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Comunidad"/>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JRadioButton" name="estudiante">
+                      <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="tipopersona"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Estudiante"/>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Dialog" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Tipo de paciente"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JRadioButton" name="Todas">
+                      <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="tipopersona"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Todas"/>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JRadioButton" name="emergencia">
+                      <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="tipodeservicio"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Emergencia"/>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JRadioButton" name="cita">
+                      <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="tipodeservicio"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Cita"/>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JRadioButton" name="todos">
+                      <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="tipodeservicio"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Todas"/>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel19">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Dialog" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Fecha"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="Calendario">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Rango"/>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="pri_patologia">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="10 Primeras Patolog&#xed;as">
+                        <Property name="tabTitle" type="java.lang.String" value="10 Primeras Patolog&#xed;as"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="peso" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="fechamin" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="fechafin" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="255" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="peso" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="fechamin" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Component id="fechafin" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="peso">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Dialog" size="14" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="0" green="0" red="0" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Rango"/>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
+                      </Properties>
+                    </Component>
+                    <Component class="datechooser.beans.DateChooserCombo" name="fechamin">
+                      <Properties>
+                        <Property name="dch_combo_border" type="javax.swing.border.Border" editor="datechooser.beans.editor.border.SimpleBorderEditor">
+                          <SerializedValue value="-84,-19,0,5,115,114,0,31,106,97,118,97,120,46,115,119,105,110,103,46,98,111,114,100,101,114,46,84,105,116,108,101,100,66,111,114,100,101,114,6,-40,85,-87,11,-94,1,-49,2,0,7,73,0,18,116,105,116,108,101,74,117,115,116,105,102,105,99,97,116,105,111,110,73,0,13,116,105,116,108,101,80,111,115,105,116,105,111,110,76,0,6,98,111,114,100,101,114,116,0,27,76,106,97,118,97,120,47,115,119,105,110,103,47,98,111,114,100,101,114,47,66,111,114,100,101,114,59,76,0,5,108,97,98,101,108,116,0,20,76,106,97,118,97,120,47,115,119,105,110,103,47,74,76,97,98,101,108,59,76,0,5,116,105,116,108,101,116,0,18,76,106,97,118,97,47,108,97,110,103,47,83,116,114,105,110,103,59,76,0,10,116,105,116,108,101,67,111,108,111,114,116,0,16,76,106,97,118,97,47,97,119,116,47,67,111,108,111,114,59,76,0,9,116,105,116,108,101,70,111,110,116,116,0,15,76,106,97,118,97,47,97,119,116,47,70,111,110,116,59,120,114,0,33,106,97,118,97,120,46,115,119,105,110,103,46,98,111,114,100,101,114,46,65,98,115,116,114,97,99,116,66,111,114,100,101,114,-99,92,-94,-101,106,-10,-127,51,2,0,0,120,112,0,0,0,4,0,0,0,0,115,114,0,31,106,97,118,97,120,46,115,119,105,110,103,46,98,111,114,100,101,114,46,69,116,99,104,101,100,66,111,114,100,101,114,118,1,-83,-34,64,78,-122,-37,2,0,3,73,0,8,101,116,99,104,84,121,112,101,76,0,9,104,105,103,104,108,105,103,104,116,113,0,126,0,4,76,0,6,115,104,97,100,111,119,113,0,126,0,4,120,113,0,126,0,6,0,0,0,1,112,112,115,114,0,18,106,97,118,97,120,46,115,119,105,110,103,46,74,76,97,98,101,108,62,41,69,90,-24,49,14,24,3,0,12,90,0,15,100,105,115,97,98,108,101,100,73,99,111,110,83,101,116,73,0,19,104,111,114,105,122,111,110,116,97,108,65,108,105,103,110,109,101,110,116,73,0,22,104,111,114,105,122,111,110,116,97,108,84,101,120,116,80,111,115,105,116,105,111,110,73,0,11,105,99,111,110,84,101,120,116,71,97,112,73,0,8,109,110,101,109,111,110,105,99,73,0,13,109,110,101,109,111,110,105,99,73,110,100,101,120,73,0,17,118,101,114,116,105,99,97,108,65,108,105,103,110,109,101,110,116,73,0,20,118,101,114,116,105,99,97,108,84,101,120,116,80,111,115,105,116,105,111,110,76,0,11,100,101,102,97,117,108,116,73,99,111,110,116,0,18,76,106,97,118,97,120,47,115,119,105,110,103,47,73,99,111,110,59,76,0,12,100,105,115,97,98,108,101,100,73,99,111,110,113,0,126,0,11,76,0,8,108,97,98,101,108,70,111,114,116,0,20,76,106,97,118,97,47,97,119,116,47,67,111,109,112,111,110,101,110,116,59,76,0,4,116,101,120,116,113,0,126,0,3,120,114,0,22,106,97,118,97,120,46,115,119,105,110,103,46,74,67,111,109,112,111,110,101,110,116,51,-17,99,38,30,108,-90,-113,3,0,16,70,0,10,97,108,105,103,110,109,101,110,116,88,70,0,10,97,108,105,103,110,109,101,110,116,89,90,0,11,97,117,116,111,115,99,114,111,108,108,115,73,0,5,102,108,97,103,115,90,0,15,105,115,65,108,105,103,110,109,101,110,116,88,83,101,116,90,0,15,105,115,65,108,105,103,110,109,101,110,116,89,83,101,116,90,0,26,118,101,114,105,102,121,73,110,112,117,116,87,104,101,110,70,111,99,117,115,84,97,114,103,101,116,76,0,9,97,99,116,105,111,110,77,97,112,116,0,23,76,106,97,118,97,120,47,115,119,105,110,103,47,65,99,116,105,111,110,77,97,112,59,76,0,16,97,110,99,101,115,116,111,114,73,110,112,117,116,77,97,112,116,0,22,76,106,97,118,97,120,47,115,119,105,110,103,47,73,110,112,117,116,77,97,112,59,76,0,6,98,111,114,100,101,114,113,0,126,0,1,76,0,13,102,111,99,117,115,73,110,112,117,116,77,97,112,113,0,126,0,15,76,0,13,105,110,112,117,116,86,101,114,105,102,105,101,114,116,0,27,76,106,97,118,97,120,47,115,119,105,110,103,47,73,110,112,117,116,86,101,114,105,102,105,101,114,59,76,0,12,108,105,115,116,101,110,101,114,76,105,115,116,116,0,37,76,106,97,118,97,120,47,115,119,105,110,103,47,101,118,101,110,116,47,69,118,101,110,116,76,105,115,116,101,110,101,114,76,105,115,116,59,76,0,9,112,111,112,117,112,77,101,110,117,116,0,24,76,106,97,118,97,120,47,115,119,105,110,103,47,74,80,111,112,117,112,77,101,110,117,59,76,0,21,118,101,116,111,97,98,108,101,67,104,97,110,103,101,83,117,112,112,111,114,116,116,0,34,76,106,97,118,97,47,98,101,97,110,115,47,86,101,116,111,97,98,108,101,67,104,97,110,103,101,83,117,112,112,111,114,116,59,76,0,14,119,105,110,100,111,119,73,110,112,117,116,77,97,112,116,0,31,76,106,97,118,97,120,47,115,119,105,110,103,47,67,111,109,112,111,110,101,110,116,73,110,112,117,116,77,97,112,59,120,114,0,18,106,97,118,97,46,97,119,116,46,67,111,110,116,97,105,110,101,114,64,7,-128,115,-3,20,12,39,3,0,8,73,0,30,99,111,110,116,97,105,110,101,114,83,101,114,105,97,108,105,122,101,100,68,97,116,97,86,101,114,115,105,111,110,90,0,14,102,111,99,117,115,67,121,99,108,101,82,111,111,116,90,0,28,102,111,99,117,115,84,114,97,118,101,114,115,97,108,80,111,108,105,99,121,80,114,111,118,105,100,101,114,73,0,11,110,99,111,109,112,111,110,101,110,116,115,91,0,9,99,111,109,112,111,110,101,110,116,116,0,21,91,76,106,97,118,97,47,97,119,116,47,67,111,109,112,111,110,101,110,116,59,76,0,10,100,105,115,112,97,116,99,104,101,114,116,0,32,76,106,97,118,97,47,97,119,116,47,76,105,103,104,116,119,101,105,103,104,116,68,105,115,112,97,116,99,104,101,114,59,76,0,9,108,97,121,111,117,116,77,103,114,116,0,24,76,106,97,118,97,47,97,119,116,47,76,97,121,111,117,116,77,97,110,97,103,101,114,59,76,0,7,109,97,120,83,105,122,101,116,0,20,76,106,97,118,97,47,97,119,116,47,68,105,109,101,110,115,105,111,110,59,120,114,0,18,106,97,118,97,46,97,119,116,46,67,111,109,112,111,110,101,110,116,-107,-22,-90,89,-41,60,-92,-102,3,0,36,90,0,27,97,117,116,111,70,111,99,117,115,84,114,97,110,115,102,101,114,79,110,68,105,115,112,111,115,97,108,73,0,8,98,111,117,110,100,115,79,112,73,0,30,99,111,109,112,111,110,101,110,116,83,101,114,105,97,108,105,122,101,100,68,97,116,97,86,101,114,115,105,111,110,90,0,7,101,110,97,98,108,101,100,74,0,9,101,118,101,110,116,77,97,115,107,90,0,25,102,111,99,117,115,84,114,97,118,101,114,115,97,108,75,101,121,115,69,110,97,98,108,101,100,90,0,9,102,111,99,117,115,97,98,108,101,73,0,6,104,101,105,103,104,116,90,0,13,105,103,110,111,114,101,82,101,112,97,105,110,116,73,0,28,105,115,70,111,99,117,115,84,114,97,118,101,114,115,97,98,108,101,79,118,101,114,114,105,100,100,101,110,90,0,8,105,115,80,97,99,107,101,100,90,0,10,109,97,120,83,105,122,101,83,101,116,90,0,10,109,105,110,83,105,122,101,83,101,116,90,0,17,110,97,109,101,69,120,112,108,105,99,105,116,108,121,83,101,116,90,0,13,110,101,119,69,118,101,110,116,115,79,110,108,121,90,0,11,112,114,101,102,83,105,122,101,83,101,116,90,0,5,118,97,108,105,100,90,0,7,118,105,115,105,98,108,101,73,0,5,119,105,100,116,104,73,0,1,120,73,0,1,121,76,0,17,97,99,99,101,115,115,105,98,108,101,67,111,110,116,101,120,116,116,0,39,76,106,97,118,97,120,47,97,99,99,101,115,115,105,98,105,108,105,116,121,47,65,99,99,101,115,115,105,98,108,101,67,111,110,116,101,120,116,59,76,0,10,98,97,99,107,103,114,111,117,110,100,113,0,126,0,4,76,0,13,99,104,97,110,103,101,83,117,112,112,111,114,116,116,0,34,76,106,97,118,97,47,98,101,97,110,115,47,80,114,111,112,101,114,116,121,67,104,97,110,103,101,83,117,112,112,111,114,116,59,76,0,6,99,117,114,115,111,114,116,0,17,76,106,97,118,97,47,97,119,116,47,67,117,114,115,111,114,59,76,0,10,100,114,111,112,84,97,114,103,101,116,116,0,25,76,106,97,118,97,47,97,119,116,47,100,110,100,47,68,114,111,112,84,97,114,103,101,116,59,91,0,18,102,111,99,117,115,84,114,97,118,101,114,115,97,108,75,101,121,115,116,0,16,91,76,106,97,118,97,47,117,116,105,108,47,83,101,116,59,76,0,4,102,111,110,116,113,0,126,0,5,76,0,10,102,111,114,101,103,114,111,117,110,100,113,0,126,0,4,76,0,6,108,111,99,97,108,101,116,0,18,76,106,97,118,97,47,117,116,105,108,47,76,111,99,97,108,101,59,76,0,7,109,97,120,83,105,122,101,113,0,126,0,25,76,0,7,109,105,110,83,105,122,101,113,0,126,0,25,76,0,4,110,97,109,101,113,0,126,0,3,76,0,8,112,101,101,114,70,111,110,116,113,0,126,0,5,76,0,6,112,111,112,117,112,115,116,0,18,76,106,97,118,97,47,117,116,105,108,47,86,101,99,116,111,114,59,76,0,8,112,114,101,102,83,105,122,101,113,0,126,0,25,120,112,1,0,0,0,3,0,0,0,4,1,0,0,0,0,0,0,16,8,1,1,0,0,0,16,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,69,0,0,0,0,0,0,0,0,112,115,114,0,32,106,97,118,97,120,46,115,119,105,110,103,46,112,108,97,102,46,67,111,108,111,114,85,73,82,101,115,111,117,114,99,101,107,83,-7,-97,-14,-22,-26,-110,2,0,0,120,114,0,14,106,97,118,97,46,97,119,116,46,67,111,108,111,114,1,-91,23,-125,16,-113,51,117,2,0,5,70,0,6,102,97,108,112,104,97,73,0,5,118,97,108,117,101,76,0,2,99,115,116,0,27,76,106,97,118,97,47,97,119,116,47,99,111,108,111,114,47,67,111,108,111,114,83,112,97,99,101,59,91,0,9,102,114,103,98,118,97,108,117,101,116,0,2,91,70,91,0,6,102,118,97,108,117,101,113,0,126,0,38,120,112,0,0,0,0,-1,60,63,65,112,112,112,115,114,0,32,106,97,118,97,46,98,101,97,110,115,46,80,114,111,112,101,114,116,121,67,104,97,110,103,101,83,117,112,112,111,114,116,88,-43,-46,100,87,72,96,-69,3,0,3,73,0,42,112,114,111,112,101,114,116,121,67,104,97,110,103,101,83,117,112,112,111,114,116,83,101,114,105,97,108,105,122,101,100,68,97,116,97,86,101,114,115,105,111,110,76,0,8,99,104,105,108,100,114,101,110,116,0,21,76,106,97,118,97,47,117,116,105,108,47,72,97,115,104,116,97,98,108,101,59,76,0,6,115,111,117,114,99,101,116,0,18,76,106,97,118,97,47,108,97,110,103,47,79,98,106,101,99,116,59,120,112,0,0,0,2,112,113,0,126,0,34,112,120,112,112,112,115,114,0,13,106,97,118,97,46,97,119,116,46,70,111,110,116,-59,-95,53,-26,-52,-34,86,115,3,0,6,73,0,25,102,111,110,116,83,101,114,105,97,108,105,122,101,100,68,97,116,97,86,101,114,115,105,111,110,70,0,9,112,111,105,110,116,83,105,122,101,73,0,4,115,105,122,101,73,0,5,115,116,121,108,101,76,0,20,102,82,101,113,117,101,115,116,101,100,65,116,116,114,105,98,117,116,101,115,113,0,126,0,41,76,0,4,110,97,109,101,113,0,126,0,3,120,112,0,0,0,1,65,64,0,0,0,0,0,12,0,0,0,0,115,114,0,19,106,97,118,97,46,117,116,105,108,46,72,97,115,104,116,97,98,108,101,19,-69,15,37,33,74,-28,-72,3,0,2,70,0,10,108,111,97,100,70,97,99,116,111,114,73,0,9,116,104,114,101,115,104,111,108,100,120,112,63,64,0,0,0,0,0,8,119,8,0,0,0,11,0,0,0,2,116,0,36,115,117,110,46,102,111,110,116,46,97,116,116,114,105,98,117,116,101,118,97,108,117,101,115,46,100,101,102,105,110,101,100,95,107,101,121,115,114,0,17,106,97,118,97,46,108,97,110,103,46,73,110,116,101,103,101,114,18,-30,-96,-92,-9,-127,-121,56,2,0,1,73,0,5,118,97,108,117,101,120,114,0,16,106,97,118,97,46,108,97,110,103,46,78,117,109,98,101,114,-122,-84,-107,29,11,-108,-32,-117,2,0,0,120,112,0,64,0,127,115,114,0,27,106,97,118,97,46,97,119,116,46,102,111,110,116,46,84,101,120,116,65,116,116,114,105,98,117,116,101,107,120,-99,-116,13,-24,13,70,2,0,0,120,114,0,47,106,97,118,97,46,116,101,120,116,46,65,116,116,114,105,98,117,116,101,100,67,104,97,114,97,99,116,101,114,73,116,101,114,97,116,111,114,36,65,116,116,114,105,98,117,116,101,-127,30,116,38,-51,71,23,92,2,0,1,76,0,4,110,97,109,101,113,0,126,0,3,120,112,116,0,6,102,97,109,105,108,121,116,0,6,68,105,97,108,111,103,120,113,0,126,0,56,120,115,113,0,126,0,36,0,0,0,0,-1,0,0,0,112,112,112,115,114,0,16,106,97,118,97,46,117,116,105,108,46,76,111,99,97,108,101,126,-8,17,96,-100,48,-7,-20,3,0,6,73,0,8,104,97,115,104,99,111,100,101,76,0,7,99,111,117,110,116,114,121,113,0,126,0,3,76,0,10,101,120,116,101,110,115,105,111,110,115,113,0,126,0,3,76,0,8,108,97,110,103,117,97,103,101,113,0,126,0,3,76,0,6,115,99,114,105,112,116,113,0,126,0,3,76,0,7,118,97,114,105,97,110,116,113,0,126,0,3,120,112,-1,-1,-1,-1,116,0,2,86,69,116,0,0,116,0,2,101,115,113,0,126,0,61,113,0,126,0,61,120,112,112,112,112,112,112,112,115,114,0,29,106,97,118,97,46,97,119,116,46,67,111,109,112,111,110,101,110,116,79,114,105,101,110,116,97,116,105,111,110,-58,-22,-89,69,-95,-100,99,-52,2,0,1,73,0,11,111,114,105,101,110,116,97,116,105,111,110,120,112,0,0,0,7,112,112,120,0,0,0,1,0,0,0,0,0,0,117,114,0,21,91,76,106,97,118,97,46,97,119,116,46,67,111,109,112,111,110,101,110,116,59,21,15,-119,13,22,-26,-86,117,2,0,0,120,112,0,0,0,0,112,112,112,112,112,120,0,0,0,0,0,0,0,0,0,1,-128,64,0,1,0,1,112,112,112,112,112,115,114,0,35,106,97,118,97,120,46,115,119,105,110,103,46,101,118,101,110,116,46,69,118,101,110,116,76,105,115,116,101,110,101,114,76,105,115,116,-79,54,-58,125,-124,-22,-42,68,3,0,0,120,112,112,120,112,112,112,119,4,0,0,0,0,120,0,0,0,0,10,0,0,0,11,0,0,0,4,0,0,0,0,-1,-1,-1,-1,0,0,0,0,0,0,0,0,112,112,112,116,0,13,70,101,99,104,97,32,73,110,105,99,73,97,108,120,113,0,126,0,69,113,0,126,0,57,113,0,126,0,45"/>
+                        </Property>
+                        <Property name="dch_calSize" type="java.awt.Dimension" editor="datechooser.beans.editor.dimension.SimpleDimensionEditor">
+                          <SerializedValue value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,0,-56,0,0,1,84"/>
+                        </Property>
+                        <Property name="dch_weekDayStyle" type="datechooser.view.WeekDaysStyle" editor="datechooser.beans.editor.WeekDaysStyleEditor">
+                          <SerializedValue value="-84,-19,0,5,126,114,0,30,100,97,116,101,99,104,111,111,115,101,114,46,118,105,101,119,46,87,101,101,107,68,97,121,115,83,116,121,108,101,0,0,0,0,0,0,0,0,18,0,0,120,114,0,14,106,97,118,97,46,108,97,110,103,46,69,110,117,109,0,0,0,0,0,0,0,0,18,0,0,120,112,116,0,5,83,72,79,82,84"/>
+                        </Property>
+                        <Property name="dch_defaultDates" type="datechooser.model.multiple.PeriodSet" editor="datechooser.beans.editor.dates.PeriodsEditor">
+                          <SerializedValue value="-84,-19,0,5,115,114,0,36,100,97,116,101,99,104,111,111,115,101,114,46,109,111,100,101,108,46,109,117,108,116,105,112,108,101,46,80,101,114,105,111,100,83,101,116,-104,-44,-96,42,-91,51,-90,42,2,0,3,76,0,4,100,97,116,97,116,0,22,76,106,97,118,97,47,117,116,105,108,47,76,105,110,107,101,100,76,105,115,116,59,76,0,9,108,97,115,116,65,100,100,101,100,116,0,35,76,100,97,116,101,99,104,111,111,115,101,114,47,109,111,100,101,108,47,109,117,108,116,105,112,108,101,47,80,101,114,105,111,100,59,76,0,10,112,101,114,105,111,100,67,97,115,104,113,0,126,0,2,120,112,115,114,0,20,106,97,118,97,46,117,116,105,108,46,76,105,110,107,101,100,76,105,115,116,12,41,83,93,74,96,-120,34,3,0,0,120,112,119,4,0,0,0,0,120,112,112"/>
+                        </Property>
+                        <Property name="dch_enabled" type="boolean" value="false"/>
+                        <Property name="dch_combo_fieldFont" type="java.awt.Font" editor="datechooser.beans.editor.font.SimpleFontEditor">
+                          <SerializedValue value="-84,-19,0,5,115,114,0,13,106,97,118,97,46,97,119,116,46,70,111,110,116,-59,-95,53,-26,-52,-34,86,115,3,0,6,73,0,25,102,111,110,116,83,101,114,105,97,108,105,122,101,100,68,97,116,97,86,101,114,115,105,111,110,70,0,9,112,111,105,110,116,83,105,122,101,73,0,4,115,105,122,101,73,0,5,115,116,121,108,101,76,0,20,102,82,101,113,117,101,115,116,101,100,65,116,116,114,105,98,117,116,101,115,116,0,21,76,106,97,118,97,47,117,116,105,108,47,72,97,115,104,116,97,98,108,101,59,76,0,4,110,97,109,101,116,0,18,76,106,97,118,97,47,108,97,110,103,47,83,116,114,105,110,103,59,120,112,0,0,0,1,65,32,0,0,0,0,0,10,0,0,0,0,115,114,0,19,106,97,118,97,46,117,116,105,108,46,72,97,115,104,116,97,98,108,101,19,-69,15,37,33,74,-28,-72,3,0,2,70,0,10,108,111,97,100,70,97,99,116,111,114,73,0,9,116,104,114,101,115,104,111,108,100,120,112,63,64,0,0,0,0,0,8,119,8,0,0,0,11,0,0,0,3,116,0,36,115,117,110,46,102,111,110,116,46,97,116,116,114,105,98,117,116,101,118,97,108,117,101,115,46,100,101,102,105,110,101,100,95,107,101,121,115,114,0,17,106,97,118,97,46,108,97,110,103,46,73,110,116,101,103,101,114,18,-30,-96,-92,-9,-127,-121,56,2,0,1,73,0,5,118,97,108,117,101,120,114,0,16,106,97,118,97,46,108,97,110,103,46,78,117,109,98,101,114,-122,-84,-107,29,11,-108,-32,-117,2,0,0,120,112,0,64,0,127,115,114,0,27,106,97,118,97,46,97,119,116,46,102,111,110,116,46,84,101,120,116,65,116,116,114,105,98,117,116,101,107,120,-99,-116,13,-24,13,70,2,0,0,120,114,0,47,106,97,118,97,46,116,101,120,116,46,65,116,116,114,105,98,117,116,101,100,67,104,97,114,97,99,116,101,114,73,116,101,114,97,116,111,114,36,65,116,116,114,105,98,117,116,101,-127,30,116,38,-51,71,23,92,2,0,1,76,0,4,110,97,109,101,113,0,126,0,2,120,112,116,0,6,102,97,109,105,108,121,116,0,6,68,105,97,108,111,103,115,113,0,126,0,10,116,0,4,115,105,122,101,115,114,0,15,106,97,118,97,46,108,97,110,103,46,70,108,111,97,116,-38,-19,-55,-94,-37,60,-16,-20,2,0,1,70,0,5,118,97,108,117,101,120,113,0,126,0,8,65,32,0,0,120,113,0,126,0,14,120"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="datechooser.beans.DateChooserCombo" name="fechafin">
+                      <Properties>
+                        <Property name="dch_combo_border" type="javax.swing.border.Border" editor="datechooser.beans.editor.border.SimpleBorderEditor">
+                          <SerializedValue value="-84,-19,0,5,115,114,0,31,106,97,118,97,120,46,115,119,105,110,103,46,98,111,114,100,101,114,46,84,105,116,108,101,100,66,111,114,100,101,114,6,-40,85,-87,11,-94,1,-49,2,0,7,73,0,18,116,105,116,108,101,74,117,115,116,105,102,105,99,97,116,105,111,110,73,0,13,116,105,116,108,101,80,111,115,105,116,105,111,110,76,0,6,98,111,114,100,101,114,116,0,27,76,106,97,118,97,120,47,115,119,105,110,103,47,98,111,114,100,101,114,47,66,111,114,100,101,114,59,76,0,5,108,97,98,101,108,116,0,20,76,106,97,118,97,120,47,115,119,105,110,103,47,74,76,97,98,101,108,59,76,0,5,116,105,116,108,101,116,0,18,76,106,97,118,97,47,108,97,110,103,47,83,116,114,105,110,103,59,76,0,10,116,105,116,108,101,67,111,108,111,114,116,0,16,76,106,97,118,97,47,97,119,116,47,67,111,108,111,114,59,76,0,9,116,105,116,108,101,70,111,110,116,116,0,15,76,106,97,118,97,47,97,119,116,47,70,111,110,116,59,120,114,0,33,106,97,118,97,120,46,115,119,105,110,103,46,98,111,114,100,101,114,46,65,98,115,116,114,97,99,116,66,111,114,100,101,114,-99,92,-94,-101,106,-10,-127,51,2,0,0,120,112,0,0,0,1,0,0,0,1,115,114,0,31,106,97,118,97,120,46,115,119,105,110,103,46,98,111,114,100,101,114,46,69,116,99,104,101,100,66,111,114,100,101,114,118,1,-83,-34,64,78,-122,-37,2,0,3,73,0,8,101,116,99,104,84,121,112,101,76,0,9,104,105,103,104,108,105,103,104,116,113,0,126,0,4,76,0,6,115,104,97,100,111,119,113,0,126,0,4,120,113,0,126,0,6,0,0,0,1,112,112,115,114,0,18,106,97,118,97,120,46,115,119,105,110,103,46,74,76,97,98,101,108,62,41,69,90,-24,49,14,24,3,0,12,90,0,15,100,105,115,97,98,108,101,100,73,99,111,110,83,101,116,73,0,19,104,111,114,105,122,111,110,116,97,108,65,108,105,103,110,109,101,110,116,73,0,22,104,111,114,105,122,111,110,116,97,108,84,101,120,116,80,111,115,105,116,105,111,110,73,0,11,105,99,111,110,84,101,120,116,71,97,112,73,0,8,109,110,101,109,111,110,105,99,73,0,13,109,110,101,109,111,110,105,99,73,110,100,101,120,73,0,17,118,101,114,116,105,99,97,108,65,108,105,103,110,109,101,110,116,73,0,20,118,101,114,116,105,99,97,108,84,101,120,116,80,111,115,105,116,105,111,110,76,0,11,100,101,102,97,117,108,116,73,99,111,110,116,0,18,76,106,97,118,97,120,47,115,119,105,110,103,47,73,99,111,110,59,76,0,12,100,105,115,97,98,108,101,100,73,99,111,110,113,0,126,0,11,76,0,8,108,97,98,101,108,70,111,114,116,0,20,76,106,97,118,97,47,97,119,116,47,67,111,109,112,111,110,101,110,116,59,76,0,4,116,101,120,116,113,0,126,0,3,120,114,0,22,106,97,118,97,120,46,115,119,105,110,103,46,74,67,111,109,112,111,110,101,110,116,51,-17,99,38,30,108,-90,-113,3,0,16,70,0,10,97,108,105,103,110,109,101,110,116,88,70,0,10,97,108,105,103,110,109,101,110,116,89,90,0,11,97,117,116,111,115,99,114,111,108,108,115,73,0,5,102,108,97,103,115,90,0,15,105,115,65,108,105,103,110,109,101,110,116,88,83,101,116,90,0,15,105,115,65,108,105,103,110,109,101,110,116,89,83,101,116,90,0,26,118,101,114,105,102,121,73,110,112,117,116,87,104,101,110,70,111,99,117,115,84,97,114,103,101,116,76,0,9,97,99,116,105,111,110,77,97,112,116,0,23,76,106,97,118,97,120,47,115,119,105,110,103,47,65,99,116,105,111,110,77,97,112,59,76,0,16,97,110,99,101,115,116,111,114,73,110,112,117,116,77,97,112,116,0,22,76,106,97,118,97,120,47,115,119,105,110,103,47,73,110,112,117,116,77,97,112,59,76,0,6,98,111,114,100,101,114,113,0,126,0,1,76,0,13,102,111,99,117,115,73,110,112,117,116,77,97,112,113,0,126,0,15,76,0,13,105,110,112,117,116,86,101,114,105,102,105,101,114,116,0,27,76,106,97,118,97,120,47,115,119,105,110,103,47,73,110,112,117,116,86,101,114,105,102,105,101,114,59,76,0,12,108,105,115,116,101,110,101,114,76,105,115,116,116,0,37,76,106,97,118,97,120,47,115,119,105,110,103,47,101,118,101,110,116,47,69,118,101,110,116,76,105,115,116,101,110,101,114,76,105,115,116,59,76,0,9,112,111,112,117,112,77,101,110,117,116,0,24,76,106,97,118,97,120,47,115,119,105,110,103,47,74,80,111,112,117,112,77,101,110,117,59,76,0,21,118,101,116,111,97,98,108,101,67,104,97,110,103,101,83,117,112,112,111,114,116,116,0,34,76,106,97,118,97,47,98,101,97,110,115,47,86,101,116,111,97,98,108,101,67,104,97,110,103,101,83,117,112,112,111,114,116,59,76,0,14,119,105,110,100,111,119,73,110,112,117,116,77,97,112,116,0,31,76,106,97,118,97,120,47,115,119,105,110,103,47,67,111,109,112,111,110,101,110,116,73,110,112,117,116,77,97,112,59,120,114,0,18,106,97,118,97,46,97,119,116,46,67,111,110,116,97,105,110,101,114,64,7,-128,115,-3,20,12,39,3,0,8,73,0,30,99,111,110,116,97,105,110,101,114,83,101,114,105,97,108,105,122,101,100,68,97,116,97,86,101,114,115,105,111,110,90,0,14,102,111,99,117,115,67,121,99,108,101,82,111,111,116,90,0,28,102,111,99,117,115,84,114,97,118,101,114,115,97,108,80,111,108,105,99,121,80,114,111,118,105,100,101,114,73,0,11,110,99,111,109,112,111,110,101,110,116,115,91,0,9,99,111,109,112,111,110,101,110,116,116,0,21,91,76,106,97,118,97,47,97,119,116,47,67,111,109,112,111,110,101,110,116,59,76,0,10,100,105,115,112,97,116,99,104,101,114,116,0,32,76,106,97,118,97,47,97,119,116,47,76,105,103,104,116,119,101,105,103,104,116,68,105,115,112,97,116,99,104,101,114,59,76,0,9,108,97,121,111,117,116,77,103,114,116,0,24,76,106,97,118,97,47,97,119,116,47,76,97,121,111,117,116,77,97,110,97,103,101,114,59,76,0,7,109,97,120,83,105,122,101,116,0,20,76,106,97,118,97,47,97,119,116,47,68,105,109,101,110,115,105,111,110,59,120,114,0,18,106,97,118,97,46,97,119,116,46,67,111,109,112,111,110,101,110,116,-107,-22,-90,89,-41,60,-92,-102,3,0,36,90,0,27,97,117,116,111,70,111,99,117,115,84,114,97,110,115,102,101,114,79,110,68,105,115,112,111,115,97,108,73,0,8,98,111,117,110,100,115,79,112,73,0,30,99,111,109,112,111,110,101,110,116,83,101,114,105,97,108,105,122,101,100,68,97,116,97,86,101,114,115,105,111,110,90,0,7,101,110,97,98,108,101,100,74,0,9,101,118,101,110,116,77,97,115,107,90,0,25,102,111,99,117,115,84,114,97,118,101,114,115,97,108,75,101,121,115,69,110,97,98,108,101,100,90,0,9,102,111,99,117,115,97,98,108,101,73,0,6,104,101,105,103,104,116,90,0,13,105,103,110,111,114,101,82,101,112,97,105,110,116,73,0,28,105,115,70,111,99,117,115,84,114,97,118,101,114,115,97,98,108,101,79,118,101,114,114,105,100,100,101,110,90,0,8,105,115,80,97,99,107,101,100,90,0,10,109,97,120,83,105,122,101,83,101,116,90,0,10,109,105,110,83,105,122,101,83,101,116,90,0,17,110,97,109,101,69,120,112,108,105,99,105,116,108,121,83,101,116,90,0,13,110,101,119,69,118,101,110,116,115,79,110,108,121,90,0,11,112,114,101,102,83,105,122,101,83,101,116,90,0,5,118,97,108,105,100,90,0,7,118,105,115,105,98,108,101,73,0,5,119,105,100,116,104,73,0,1,120,73,0,1,121,76,0,17,97,99,99,101,115,115,105,98,108,101,67,111,110,116,101,120,116,116,0,39,76,106,97,118,97,120,47,97,99,99,101,115,115,105,98,105,108,105,116,121,47,65,99,99,101,115,115,105,98,108,101,67,111,110,116,101,120,116,59,76,0,10,98,97,99,107,103,114,111,117,110,100,113,0,126,0,4,76,0,13,99,104,97,110,103,101,83,117,112,112,111,114,116,116,0,34,76,106,97,118,97,47,98,101,97,110,115,47,80,114,111,112,101,114,116,121,67,104,97,110,103,101,83,117,112,112,111,114,116,59,76,0,6,99,117,114,115,111,114,116,0,17,76,106,97,118,97,47,97,119,116,47,67,117,114,115,111,114,59,76,0,10,100,114,111,112,84,97,114,103,101,116,116,0,25,76,106,97,118,97,47,97,119,116,47,100,110,100,47,68,114,111,112,84,97,114,103,101,116,59,91,0,18,102,111,99,117,115,84,114,97,118,101,114,115,97,108,75,101,121,115,116,0,16,91,76,106,97,118,97,47,117,116,105,108,47,83,101,116,59,76,0,4,102,111,110,116,113,0,126,0,5,76,0,10,102,111,114,101,103,114,111,117,110,100,113,0,126,0,4,76,0,6,108,111,99,97,108,101,116,0,18,76,106,97,118,97,47,117,116,105,108,47,76,111,99,97,108,101,59,76,0,7,109,97,120,83,105,122,101,113,0,126,0,25,76,0,7,109,105,110,83,105,122,101,113,0,126,0,25,76,0,4,110,97,109,101,113,0,126,0,3,76,0,8,112,101,101,114,70,111,110,116,113,0,126,0,5,76,0,6,112,111,112,117,112,115,116,0,18,76,106,97,118,97,47,117,116,105,108,47,86,101,99,116,111,114,59,76,0,8,112,114,101,102,83,105,122,101,113,0,126,0,25,120,112,1,0,0,0,3,0,0,0,4,0,0,0,0,0,0,0,16,8,1,1,0,0,0,16,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,64,0,0,0,0,0,0,0,0,112,115,114,0,32,106,97,118,97,120,46,115,119,105,110,103,46,112,108,97,102,46,67,111,108,111,114,85,73,82,101,115,111,117,114,99,101,107,83,-7,-97,-14,-22,-26,-110,2,0,0,120,114,0,14,106,97,118,97,46,97,119,116,46,67,111,108,111,114,1,-91,23,-125,16,-113,51,117,2,0,5,70,0,6,102,97,108,112,104,97,73,0,5,118,97,108,117,101,76,0,2,99,115,116,0,27,76,106,97,118,97,47,97,119,116,47,99,111,108,111,114,47,67,111,108,111,114,83,112,97,99,101,59,91,0,9,102,114,103,98,118,97,108,117,101,116,0,2,91,70,91,0,6,102,118,97,108,117,101,113,0,126,0,38,120,112,0,0,0,0,-1,60,63,65,112,112,112,115,114,0,32,106,97,118,97,46,98,101,97,110,115,46,80,114,111,112,101,114,116,121,67,104,97,110,103,101,83,117,112,112,111,114,116,88,-43,-46,100,87,72,96,-69,3,0,3,73,0,42,112,114,111,112,101,114,116,121,67,104,97,110,103,101,83,117,112,112,111,114,116,83,101,114,105,97,108,105,122,101,100,68,97,116,97,86,101,114,115,105,111,110,76,0,8,99,104,105,108,100,114,101,110,116,0,21,76,106,97,118,97,47,117,116,105,108,47,72,97,115,104,116,97,98,108,101,59,76,0,6,115,111,117,114,99,101,116,0,18,76,106,97,118,97,47,108,97,110,103,47,79,98,106,101,99,116,59,120,112,0,0,0,2,112,113,0,126,0,34,112,120,112,112,112,115,114,0,13,106,97,118,97,46,97,119,116,46,70,111,110,116,-59,-95,53,-26,-52,-34,86,115,3,0,6,73,0,25,102,111,110,116,83,101,114,105,97,108,105,122,101,100,68,97,116,97,86,101,114,115,105,111,110,70,0,9,112,111,105,110,116,83,105,122,101,73,0,4,115,105,122,101,73,0,5,115,116,121,108,101,76,0,20,102,82,101,113,117,101,115,116,101,100,65,116,116,114,105,98,117,116,101,115,113,0,126,0,41,76,0,4,110,97,109,101,113,0,126,0,3,120,112,0,0,0,1,65,64,0,0,0,0,0,12,0,0,0,0,115,114,0,19,106,97,118,97,46,117,116,105,108,46,72,97,115,104,116,97,98,108,101,19,-69,15,37,33,74,-28,-72,3,0,2,70,0,10,108,111,97,100,70,97,99,116,111,114,73,0,9,116,104,114,101,115,104,111,108,100,120,112,63,64,0,0,0,0,0,8,119,8,0,0,0,11,0,0,0,2,116,0,36,115,117,110,46,102,111,110,116,46,97,116,116,114,105,98,117,116,101,118,97,108,117,101,115,46,100,101,102,105,110,101,100,95,107,101,121,115,114,0,17,106,97,118,97,46,108,97,110,103,46,73,110,116,101,103,101,114,18,-30,-96,-92,-9,-127,-121,56,2,0,1,73,0,5,118,97,108,117,101,120,114,0,16,106,97,118,97,46,108,97,110,103,46,78,117,109,98,101,114,-122,-84,-107,29,11,-108,-32,-117,2,0,0,120,112,0,64,0,127,115,114,0,27,106,97,118,97,46,97,119,116,46,102,111,110,116,46,84,101,120,116,65,116,116,114,105,98,117,116,101,107,120,-99,-116,13,-24,13,70,2,0,0,120,114,0,47,106,97,118,97,46,116,101,120,116,46,65,116,116,114,105,98,117,116,101,100,67,104,97,114,97,99,116,101,114,73,116,101,114,97,116,111,114,36,65,116,116,114,105,98,117,116,101,-127,30,116,38,-51,71,23,92,2,0,1,76,0,4,110,97,109,101,113,0,126,0,3,120,112,116,0,6,102,97,109,105,108,121,116,0,6,68,105,97,108,111,103,120,113,0,126,0,56,120,115,113,0,126,0,36,0,0,0,0,-1,0,0,0,112,112,112,115,114,0,16,106,97,118,97,46,117,116,105,108,46,76,111,99,97,108,101,126,-8,17,96,-100,48,-7,-20,3,0,6,73,0,8,104,97,115,104,99,111,100,101,76,0,7,99,111,117,110,116,114,121,113,0,126,0,3,76,0,10,101,120,116,101,110,115,105,111,110,115,113,0,126,0,3,76,0,8,108,97,110,103,117,97,103,101,113,0,126,0,3,76,0,6,115,99,114,105,112,116,113,0,126,0,3,76,0,7,118,97,114,105,97,110,116,113,0,126,0,3,120,112,-1,-1,-1,-1,116,0,2,86,69,116,0,0,116,0,2,101,115,113,0,126,0,61,113,0,126,0,61,120,112,112,112,112,112,112,112,115,114,0,29,106,97,118,97,46,97,119,116,46,67,111,109,112,111,110,101,110,116,79,114,105,101,110,116,97,116,105,111,110,-58,-22,-89,69,-95,-100,99,-52,2,0,1,73,0,11,111,114,105,101,110,116,97,116,105,111,110,120,112,0,0,0,7,112,112,120,0,0,0,1,0,0,0,0,0,0,117,114,0,21,91,76,106,97,118,97,46,97,119,116,46,67,111,109,112,111,110,101,110,116,59,21,15,-119,13,22,-26,-86,117,2,0,0,120,112,0,0,0,0,112,112,112,112,112,120,0,0,0,0,0,0,0,0,0,1,-128,64,0,1,0,1,112,112,112,112,112,115,114,0,35,106,97,118,97,120,46,115,119,105,110,103,46,101,118,101,110,116,46,69,118,101,110,116,76,105,115,116,101,110,101,114,76,105,115,116,-79,54,-58,125,-124,-22,-42,68,3,0,0,120,112,112,120,112,112,112,119,4,0,0,0,0,120,0,0,0,0,10,0,0,0,11,0,0,0,4,0,0,0,0,-1,-1,-1,-1,0,0,0,0,0,0,0,0,112,112,112,116,0,11,70,101,99,104,97,32,70,105,110,97,108,120,113,0,126,0,69,113,0,126,0,57,113,0,126,0,45"/>
+                        </Property>
+                        <Property name="dch_calSize" type="java.awt.Dimension" editor="datechooser.beans.editor.dimension.SimpleDimensionEditor">
+                          <SerializedValue value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,0,-56,0,0,1,84"/>
+                        </Property>
+                        <Property name="dch_defaultDates" type="datechooser.model.multiple.PeriodSet" editor="datechooser.beans.editor.dates.PeriodsEditor">
+                          <SerializedValue value="-84,-19,0,5,115,114,0,36,100,97,116,101,99,104,111,111,115,101,114,46,109,111,100,101,108,46,109,117,108,116,105,112,108,101,46,80,101,114,105,111,100,83,101,116,-104,-44,-96,42,-91,51,-90,42,2,0,3,76,0,4,100,97,116,97,116,0,22,76,106,97,118,97,47,117,116,105,108,47,76,105,110,107,101,100,76,105,115,116,59,76,0,9,108,97,115,116,65,100,100,101,100,116,0,35,76,100,97,116,101,99,104,111,111,115,101,114,47,109,111,100,101,108,47,109,117,108,116,105,112,108,101,47,80,101,114,105,111,100,59,76,0,10,112,101,114,105,111,100,67,97,115,104,113,0,126,0,2,120,112,115,114,0,20,106,97,118,97,46,117,116,105,108,46,76,105,110,107,101,100,76,105,115,116,12,41,83,93,74,96,-120,34,3,0,0,120,112,119,4,0,0,0,0,120,112,112"/>
+                        </Property>
+                        <Property name="dch_enabled" type="boolean" value="false"/>
+                        <Property name="dch_combo_fieldFont" type="java.awt.Font" editor="datechooser.beans.editor.font.SimpleFontEditor">
+                          <SerializedValue value="-84,-19,0,5,115,114,0,13,106,97,118,97,46,97,119,116,46,70,111,110,116,-59,-95,53,-26,-52,-34,86,115,3,0,6,73,0,25,102,111,110,116,83,101,114,105,97,108,105,122,101,100,68,97,116,97,86,101,114,115,105,111,110,70,0,9,112,111,105,110,116,83,105,122,101,73,0,4,115,105,122,101,73,0,5,115,116,121,108,101,76,0,20,102,82,101,113,117,101,115,116,101,100,65,116,116,114,105,98,117,116,101,115,116,0,21,76,106,97,118,97,47,117,116,105,108,47,72,97,115,104,116,97,98,108,101,59,76,0,4,110,97,109,101,116,0,18,76,106,97,118,97,47,108,97,110,103,47,83,116,114,105,110,103,59,120,112,0,0,0,1,65,32,0,0,0,0,0,10,0,0,0,0,115,114,0,19,106,97,118,97,46,117,116,105,108,46,72,97,115,104,116,97,98,108,101,19,-69,15,37,33,74,-28,-72,3,0,2,70,0,10,108,111,97,100,70,97,99,116,111,114,73,0,9,116,104,114,101,115,104,111,108,100,120,112,63,64,0,0,0,0,0,8,119,8,0,0,0,11,0,0,0,3,116,0,36,115,117,110,46,102,111,110,116,46,97,116,116,114,105,98,117,116,101,118,97,108,117,101,115,46,100,101,102,105,110,101,100,95,107,101,121,115,114,0,17,106,97,118,97,46,108,97,110,103,46,73,110,116,101,103,101,114,18,-30,-96,-92,-9,-127,-121,56,2,0,1,73,0,5,118,97,108,117,101,120,114,0,16,106,97,118,97,46,108,97,110,103,46,78,117,109,98,101,114,-122,-84,-107,29,11,-108,-32,-117,2,0,0,120,112,0,64,0,127,115,114,0,27,106,97,118,97,46,97,119,116,46,102,111,110,116,46,84,101,120,116,65,116,116,114,105,98,117,116,101,107,120,-99,-116,13,-24,13,70,2,0,0,120,114,0,47,106,97,118,97,46,116,101,120,116,46,65,116,116,114,105,98,117,116,101,100,67,104,97,114,97,99,116,101,114,73,116,101,114,97,116,111,114,36,65,116,116,114,105,98,117,116,101,-127,30,116,38,-51,71,23,92,2,0,1,76,0,4,110,97,109,101,113,0,126,0,2,120,112,116,0,6,102,97,109,105,108,121,116,0,6,68,105,97,108,111,103,115,113,0,126,0,10,116,0,4,115,105,122,101,115,114,0,15,106,97,118,97,46,108,97,110,103,46,70,108,111,97,116,-38,-19,-55,-94,-37,60,-16,-20,2,0,1,70,0,5,118,97,108,117,101,120,113,0,126,0,8,65,32,0,0,120,113,0,126,0,14,120"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+          <LayoutCode>
+            <CodeStatement>
+              <CodeExpression id="1_flowLayout1">
+                <CodeVariable name="flowLayout1" type="4096" declaredType="java.awt.FlowLayout"/>
+                <ExpressionOrigin>
+                  <ExpressionProvider type="CodeConstructor">
+                    <CodeConstructor class="java.awt.FlowLayout" parameterTypes="int, int, int"/>
+                  </ExpressionProvider>
+                  <Parameters>
+                    <CodeExpression id="2">
+                      <ExpressionOrigin>
+                        <Value type="int" value="1"/>
+                      </ExpressionOrigin>
+                    </CodeExpression>
+                    <CodeExpression id="3">
+                      <ExpressionOrigin>
+                        <Value type="int" value="60"/>
+                      </ExpressionOrigin>
+                    </CodeExpression>
+                    <CodeExpression id="4">
+                      <ExpressionOrigin>
+                        <Value type="int" value="20"/>
+                      </ExpressionOrigin>
+                    </CodeExpression>
+                  </Parameters>
+                </ExpressionOrigin>
+              </CodeExpression>
+              <StatementProvider type="CodeExpression">
+                <CodeExpression id="1_flowLayout1"/>
+              </StatementProvider>
+              <Parameters>
+                <CodeExpression id="2"/>
+                <CodeExpression id="3"/>
+                <CodeExpression id="4"/>
+              </Parameters>
+            </CodeStatement>
+            <CodeStatement>
+              <CodeExpression id="1_flowLayout1"/>
+              <StatementProvider type="CodeMethod">
+                <CodeMethod name="setAlignOnBaseline" class="java.awt.FlowLayout" parameterTypes="boolean"/>
+              </StatementProvider>
+              <Parameters>
+                <CodeExpression id="5">
+                  <ExpressionOrigin>
+                    <Value type="boolean" value="true"/>
+                  </ExpressionOrigin>
+                </CodeExpression>
+              </Parameters>
+            </CodeStatement>
+            <CodeStatement>
+              <CodeExpression id="6_center">
+                <CodeVariable name="center" type="8194" declaredType="javax.swing.JPanel"/>
+                <ExpressionOrigin>
+                  <ExpressionProvider type="ComponentRef">
+                    <ComponentRef name="center"/>
+                  </ExpressionProvider>
+                </ExpressionOrigin>
+              </CodeExpression>
+              <StatementProvider type="CodeMethod">
+                <CodeMethod name="setLayout" class="java.awt.Container" parameterTypes="java.awt.LayoutManager"/>
+              </StatementProvider>
+              <Parameters>
+                <CodeExpression id="1_flowLayout1"/>
+              </Parameters>
+            </CodeStatement>
+          </LayoutCode>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

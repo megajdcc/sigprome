@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="40" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true" uuid="dc7fd47a-4fe7-44c0-9d2c-adca1cc45567">
+	<property name="ireport.zoom" value="1.5000000000000007"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.chart.theme" value="aegean"/>
+	<subDataset name="general" uuid="898ed938-4e35-494f-84e4-4cd2ff1aa410">
+		<parameter name="fechainicial1" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fechafinal1" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT pat.nombre as patologías, count(pat.id) as cantidad from patologia as pat
+join assocpatologia as ap on(pat.id = ap.id_patologia)
+join consulta as cons on(ap.id_consulta = cons.id)
+where (cons.fecha BETWEEN $P{fechainicial1} AND $P{fechafinal1})
+GROUP by pat.nombre order  by cantidad DESC LIMIT 10]]>
+		</queryString>
+		<field name="patologías" class="java.lang.String"/>
+		<field name="cantidad" class="java.lang.Long"/>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["A:\\Documents\\Programacion\\Sigprome\\src\\Vista\\reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechainicial" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechafinal" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT  mun.nombre as municipio, est.nombre as estado, pat.nombre as patologías, count(pat.id) as cantidad from patologia as pat
+join assocpatologia as ap on(pat.id = ap.id_patologia)
+join consulta as cons on(ap.id_consulta = cons.id)
+join triaje as tri on(cons.id_triaje = tri.id)
+join servicio as serv on(tri.id_servicio = serv.id)
+join paciente as pac on(serv.id_paciente = pac.id)
+join persona as pers on(pac.cedula = pers.cedula)
+join parroquia as parr on(pers.id_parroquia = parr.id)
+join municipio as mun on(parr.idmunicipio = mun.id)
+join estado as est on(mun.idestado = est.id)					
+where (cons.fecha BETWEEN $P{fechainicial} AND $P{fechafinal})
+GROUP by pat.nombre,mun.nombre,est.nombre order  by cantidad DESC LIMIT 10]]>
+	</queryString>
+	<field name="municipio" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="patologías" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Long"/>
+	<title>
+		<band height="536" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="535" height="56" uuid="58ed74a1-cbcf-49c6-853b-7e24e0bf149e"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Headers.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="56" width="535" height="70" uuid="cfeb5010-32be-4a27-8de0-486fe3b99493"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDAD POLITÉCNICA TERRITORIAL DE YARACUY “ARÍSTIDES BASTIDAS”
+ AV. ARTURO USLAR PIETRI C/AV INTERCOMUNAL JOSÉ ANTONIO PÁEZ
+UNIDAD DE RECURSOS HUMANOS
+SERVICIO MEDICO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="126" width="129" height="20" uuid="e76c9ea9-d062-464d-955e-333ee3b23e3f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[MORBÍLIDAD MEDICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="146" width="167" height="20" uuid="1918a596-5f54-4ddc-b7f5-da7720f5c448"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[10 primeras patologias]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="248" y="146" width="287" height="20" uuid="44d0ed1b-3b9e-406b-869a-64fa25076ddf"/>
+				<subreportParameter name="segundafecha2">
+					<subreportParameterExpression><![CDATA[$P{fechafinal}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="primerafecha2">
+					<subreportParameterExpression><![CDATA[$P{fechainicial}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "fechasdemorbilidad.jasper"]]></subreportExpression>
+			</subreport>
+			<pie3DChart>
+				<chart evaluationTime="Report" renderType="draw" theme="default">
+					<reportElement x="0" y="185" width="535" height="154" uuid="613698cf-d1f7-47c4-989a-696b81512715"/>
+					<chartTitle>
+						<font fontName="Serif" isBold="true" isItalic="true"/>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend position="Right"/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="general" uuid="fa2cc761-8610-40d1-943f-2542894eee80">
+							<datasetParameter name="fechainicial1">
+								<datasetParameterExpression><![CDATA[$P{fechainicial}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="fechafinal1">
+								<datasetParameterExpression><![CDATA[$P{fechafinal}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+					</dataset>
+					<keyExpression><![CDATA[$F{patologías}]]></keyExpression>
+					<valueExpression><![CDATA[$F{cantidad}]]></valueExpression>
+					<labelExpression><![CDATA[$F{cantidad}+" "]]></labelExpression>
+					<sectionHyperlink>
+						<hyperlinkTooltipExpression><![CDATA[$F{cantidad}+" "]]></hyperlinkTooltipExpression>
+					</sectionHyperlink>
+				</pieDataset>
+				<pie3DPlot isShowLabels="true" isCircular="false">
+					<plot orientation="Horizontal"/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+				</pie3DPlot>
+			</pie3DChart>
+			<staticText>
+				<reportElement x="0" y="339" width="190" height="20" uuid="880d5eed-2205-4449-b245-73876a13ef49"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[10 primeras patologias por sector]]></text>
+			</staticText>
+			<bar3DChart>
+				<chart evaluationTime="Report" theme="default">
+					<reportElement x="0" y="369" width="535" height="167" uuid="defe20b1-7d86-4654-90b7-595c6f2d9b7b"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend position="Right"/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{municipio}+": "+$F{estado}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{patologías}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{cantidad}]]></valueExpression>
+						<labelExpression><![CDATA[$F{cantidad}+ ""]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot isShowLabels="true">
+					<plot/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="42">
+			<staticText>
+				<reportElement x="273" y="20" width="153" height="20" uuid="37e0cc6a-1a85-46c7-8557-f16438d34817"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patologías]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="20" width="144" height="20" uuid="5246d832-321b-4775-b59a-2b509db2c5fa"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="20" width="53" height="20" uuid="e64b3efb-8943-4558-a3df-0ebc12954382"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="126" height="20" uuid="374e5816-87fe-4b00-ac86-22c5b191496e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detallado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="126" height="20" uuid="19de61c7-813d-4e15-8dec-00f94ed5a8d9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Municipio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16">
+			<textField>
+				<reportElement x="0" y="0" width="126" height="15" uuid="3a000e29-35a7-4c28-b769-1376c0a49aa9"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{municipio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="0" width="144" height="15" uuid="947edfe7-94eb-4c38-9d75-0b5a4cd6ed78"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="0" width="153" height="15" uuid="5aba006c-4fa2-4aad-a35c-87a9f0400360"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patologías}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="0" width="53" height="15" uuid="48009532-d3ee-43fb-a9ef-ae4f503b7bcc"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<elementGroup>
+				<staticText>
+					<reportElement x="10" y="20" width="87" height="20" uuid="f11fa7cf-d55d-4e36-a401-89cadc84fc44"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Universidad Politécnica Territorial de Yaracuy "Arístides Bastidas"]]></text>
+				</staticText>
+				<line>
+					<reportElement x="98" y="20" width="1" height="20" uuid="b0cafe11-0d80-44f0-824d-efa2b4a79367"/>
+				</line>
+				<staticText>
+					<reportElement x="103" y="20" width="87" height="20" uuid="567d7e45-6771-424f-8221-b30daf5f2ff3"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="false" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Avenida Alberto Ravell con Avenida José Páez, Municipio Independencia, estado Yaracuy
+San Felipe, Venezuela]]></text>
+				</staticText>
+			</elementGroup>
+			<textField>
+				<reportElement x="515" y="20" width="20" height="20" uuid="beedbf26-8760-467d-a661-077ae0fe0e49"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

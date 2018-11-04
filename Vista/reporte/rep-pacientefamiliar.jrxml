@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="95"/>
+	<style name="Heading 3" fontSize="14" isBold="true"/>
+	<parameter name="cedul" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select p.cedula, p.nombre,p.apellido,p.sexo, p.sexo,p.fecha_nacimiento as fechanacimiento, p.direccion, tp.nombre as tipopersona, p.telefono, parr.nombre as parroquia,
+mun.nombre as municipio, est.nombre  as estado, pac.campo_adicional
+from persona as p 
+join tipopersona as tp on (p.id_tipopersona  = tp.id)
+join parroquia as parr on(p.id_parroquia = parr.id)
+join municipio as mun on(parr.idmunicipio = mun.id)
+join estado as est on (mun.idestado = est.id)
+join paciente as pac on(p.cedula = pac.cedula)
+where p.cedula = $P{cedul} order by p.nombre;]]>
+	</queryString>
+	<field name="cedula" class="java.lang.Long"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apellido" class="java.lang.String"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="fechanacimiento" class="java.sql.Date"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="tipopersona" class="java.lang.String"/>
+	<field name="telefono" class="java.lang.Long"/>
+	<field name="parroquia" class="java.lang.String"/>
+	<field name="municipio" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="campo_adicional" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="143" splitType="Stretch">
+			<rectangle>
+				<reportElement x="393" y="0" width="1" height="95" backcolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="0" y="0" width="555" height="106"/>
+				<imageExpression class="java.lang.String"><![CDATA["A:\\Documents\\Programacion\\Sigprome\\src\\Vista\\imagen\\imágenes\\logo-institucional.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="396" y="0" width="159" height="95"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Universidad Politécnica Territorial de Yaracuy "Arístides Bastidas".]]></text>
+			</staticText>
+			<rectangle radius="5">
+				<reportElement x="0" y="106" width="555" height="24" backcolor="#003366"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="9" y="106" width="546" height="24" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[PACIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="114" height="95"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ Servicio Médico Universitario]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="416" splitType="Immediate">
+			<rectangle radius="5">
+				<reportElement x="71" y="115" width="208" height="46"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="67" y="20" width="113" height="20" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Heading 3" x="0" y="20" width="62" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Nombre: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Heading 3" x="0" y="40" width="62" height="20"/>
+				<textElement rotation="None">
+					<font fontName="Times New Roman" size="14" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Apellido:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="67" y="40" width="113" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Heading 3" x="240" y="0" width="143" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Sexo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="396" y="0" width="130" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Heading 3" x="0" y="0" width="62" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Cédula:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="67" y="0" width="113" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Heading 3" x="240" y="19" width="143" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Fecha de Nacimiento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="396" y="19" width="130" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{fechanacimiento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Heading 3" x="0" y="167" width="71" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Télefono:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="167" width="208" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="5">
+				<reportElement x="0" y="79" width="555" height="24" backcolor="#003366"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="9" y="79" width="546" height="24" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Heading 3" x="0" y="115" width="71" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="115" width="208" height="46" backcolor="#000000"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" size="12" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Heading 3" x="302" y="167" width="91" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Estado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Heading 3" x="302" y="115" width="91" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Parroquia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Heading 3" x="302" y="141" width="91" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Municipio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="408" y="115" width="118" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parroquia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="408" y="141" width="118" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{municipio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="408" y="167" width="118" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Heading 3" x="240" y="39" width="143" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Tipo de paciente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="396" y="39" width="132" height="20" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipopersona}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Heading 3" x="0" y="202" width="143" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Obeservación:]]></text>
+			</staticText>
+			<rectangle radius="5">
+				<reportElement x="149" y="202" width="377" height="72"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="153" y="202" width="373" height="72"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{campo_adicional}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="35">
+			<staticText>
+				<reportElement x="0" y="0" width="149" height="35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="10" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Universidad Politécnica Territorial de Yaracuy "Arístides Bastidas"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="0" width="149" height="35"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="10" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Avenida Alberto Ravell con Avenida José Páez, Municipio Independencia, estado Yaracuy
+San Felipe, Venezuela]]></text>
+			</staticText>
+			<line>
+				<reportElement x="151" y="0" width="1" height="35"/>
+			</line>
+			<textField>
+				<reportElement x="542" y="15" width="13" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

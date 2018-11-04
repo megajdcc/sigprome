@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="535" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.6620000000000026"/>
+	<property name="ireport.x" value="671"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="0" width="117" height="48"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Ministerio del Poder Popular para la educación Universitaría Ciencia y Tecnología]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="52" width="535" height="1" forecolor="#FF6600"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="127" y="0" width="1" height="48"/>
+			</line>
+			<staticText>
+				<reportElement x="321" y="0" width="114" height="48"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Universidad Politécnica Territorial de Yaracuy "Arístides Bastídas"]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="127" height="48"/>
+				<imageExpression class="java.lang.String"><![CDATA["A:\\Documents\\Programacion\\Sigprome\\src\\Vista\\imagen\\gobierno bolivariano de venezuela.jpeg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="247" y="0" width="1" height="48"/>
+			</line>
+			<line>
+				<reportElement x="0" y="55" width="535" height="1" forecolor="#141F78"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="435" y="0" width="100" height="48"/>
+				<imageExpression class="java.lang.String"><![CDATA["A:\\Documents\\Programacion\\Sigprome\\src\\Vista\\imagen\\200patriotas.png"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isLazy="true">
+				<reportElement x="250" y="0" width="71" height="48"/>
+				<imageExpression class="java.lang.String"><![CDATA["A:\\Documents\\Programacion\\Sigprome\\src\\Vista\\imagen\\uptyab.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

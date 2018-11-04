@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MorbilidadMedica_subreport1" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.chart.theme" value="aegean"/>
+	<subDataset name="tipoempleado">
+		<parameter name="fechainicial3" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fechaultima3" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select count(p.cedula) as vistos,tp.nombre as tiposervicio,tpem.nombre as tipoempleado from persona as p
+join 
+	tipopersona as tpers on(p.id_tipopersona = tpers.id)
+join 
+	empleado as emp on(p.cedula = emp.cedulapersona)
+join
+	tipoempleado as tpem on(emp.id_tipoempleado = tpem.id)
+join
+	paciente as pac on(p.cedula = pac.cedula)
+join 
+	servicio as ser on(pac.id = ser.id_paciente)
+join
+	tiposervicio as tp on(ser.id_tipo_servicio = tp.id) 
+join 
+	triaje as tri on(ser.id = tri.id_servicio)
+join 
+	consulta as con on(tri.id = con.id_triaje)
+where 
+	con.fecha BETWEEN $P{fechainicial3} and $P{fechaultima3}
+group by 
+	tp.nombre,tpem.nombre
+order by 
+	tpem.nombre
+]]>
+		</queryString>
+		<field name="vistos" class="java.lang.Long"/>
+		<field name="tiposervicio" class="java.lang.String"/>
+		<field name="tipoempleado" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="porsector">
+		<parameter name="primerafecha5" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ultimafecha5" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select count(p.cedula) as vistos,tp.nombre as tiposervicio, mun.nombre as municipio from persona as p
+join 
+	tipopersona as tpers on(p.id_tipopersona = tpers.id)
+join
+	parroquia as parr on(p.id_parroquia = parr.id)
+join 
+	municipio as mun on(parr.idmunicipio = mun.id)
+join
+	estado as est on(mun.idestado = est.id)
+join
+	paciente as pac on(p.cedula = pac.cedula)
+join 
+	servicio as ser on(pac.id = ser.id_paciente)
+join
+	tiposervicio as tp on(ser.id_tipo_servicio = tp.id) 
+join 
+	triaje as tri on(ser.id = tri.id_servicio)
+join 
+	consulta as con on(tri.id = con.id_triaje)
+where 
+	con.fecha BETWEEN $P{primerafecha5} and $P{ultimafecha5} and est.nombre = 'Yaracuy'
+group by 
+	tp.nombre,mun.nombre
+order by 
+	mun.nombre
+
+]]>
+		</queryString>
+		<field name="vistos" class="java.lang.Long"/>
+		<field name="tiposervicio" class="java.lang.String"/>
+		<field name="municipio" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["A:\\Documents\\Programacion\\Sigprome\\src\\Vista\\reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="primerafecha1" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ultimafecha1" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select count(p.cedula) as vistos, tp.nombre as tiposervicio, tpers.nombre as tipopersona from persona as p
+join 
+	tipopersona as tpers on(p.id_tipopersona = tpers.id)
+join 
+	paciente as pac on(p.cedula = pac.cedula)
+join 
+	servicio as ser on(pac.id = ser.id_paciente)
+join
+	tiposervicio as tp on(ser.id_tipo_servicio = tp.id) 
+join 
+	triaje as tri on(ser.id = tri.id_servicio)
+join 
+	consulta as con on(tri.id = con.id_triaje)
+where 
+	con.fecha BETWEEN $P{primerafecha1} and $P{ultimafecha1}
+group by 
+	tp.nombre, tpers.nombre
+order by 
+	tp.nombre]]>
+	</queryString>
+	<field name="vistos" class="java.lang.Long"/>
+	<field name="tiposervicio" class="java.lang.String"/>
+	<field name="tipopersona" class="java.lang.String"/>
+	<pageHeader>
+		<band height="434">
+			<bar3DChart>
+				<chart evaluationTime="Report" theme="default">
+					<reportElement positionType="Float" isPrintRepeatedValues="false" mode="Opaque" x="47" y="55" width="482" height="108"/>
+					<chartTitle position="Top">
+						<font fontName="Serif" isItalic="true" isPdfEmbedded="true"/>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend position="Right"/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{tipopersona}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{tiposervicio}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{vistos}]]></valueExpression>
+						<labelExpression><![CDATA[$F{vistos}+""]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot isShowLabels="true" xOffset="8.0" yOffset="5.0">
+					<plot labelRotation="0.0"/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					<categoryAxisFormat labelRotation="0.0">
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat verticalTickLabels="true">
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Gráfica  general]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="129" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[MORBÍLIDAD MEDICA]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="264" y="20" width="331" height="20"/>
+				<subreportParameter name="primerafecha2">
+					<subreportParameterExpression><![CDATA[$P{primerafecha1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="segundafecha2">
+					<subreportParameterExpression><![CDATA[$P{ultimafecha1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "fechasdemorbilidad.jasper"]]></subreportExpression>
+			</subreport>
+			<bar3DChart>
+				<chart renderType="draw" theme="default">
+					<reportElement x="47" y="182" width="482" height="108"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend position="Right"/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="tipoempleado">
+							<datasetParameter name="fechainicial3">
+								<datasetParameterExpression><![CDATA[$P{primerafecha1}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="fechaultima3">
+								<datasetParameterExpression><![CDATA[$P{ultimafecha1}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{tipoempleado}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{tiposervicio}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{vistos}]]></valueExpression>
+						<labelExpression><![CDATA[$F{vistos} + ""]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot isShowLabels="true">
+					<plot/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+			<staticText>
+				<reportElement x="0" y="162" width="167" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Gráfica de empleados vistos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="300" width="167" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Gráfica por sector]]></text>
+			</staticText>
+			<bar3DChart>
+				<chart theme="default">
+					<reportElement x="47" y="320" width="482" height="108"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend position="Right"/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="porsector">
+							<datasetParameter name="primerafecha5">
+								<datasetParameterExpression><![CDATA[$P{primerafecha1}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ultimafecha5">
+								<datasetParameterExpression><![CDATA[$P{ultimafecha1}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{municipio}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{tiposervicio}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{vistos}]]></valueExpression>
+						<labelExpression><![CDATA[$F{vistos} + ""]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+		</band>
+	</pageHeader>
+</jasperReport>

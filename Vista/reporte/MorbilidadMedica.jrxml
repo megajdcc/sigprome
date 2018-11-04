@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="40" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true">
+	<property name="ireport.zoom" value="1.6500000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="70"/>
+	<property name="net.sf.jasperreports.chart.theme" value="aegean"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["A:\\Documents\\Programacion\\Sigprome\\src\\Vista\\reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="primerafecha" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ultimafecha" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select count(p.cedula) as vistos,to_char(con.fecha, 'DD/MM/YYYY') as fecha, tp.nombre as tiposervicio, tpers.nombre as tipopersona from persona as p
+join 
+	tipopersona as tpers on(p.id_tipopersona = tpers.id)
+join 
+	paciente as pac on(p.cedula = pac.cedula)
+join 
+	servicio as ser on(pac.id = ser.id_paciente)
+join
+	tiposervicio as tp on(ser.id_tipo_servicio = tp.id) 
+join 
+	triaje as tri on(ser.id = tri.id_servicio)
+join 
+	consulta as con on(tri.id = con.id_triaje)
+where 
+	con.fecha BETWEEN $P{primerafecha} and $P{ultimafecha}
+group by 
+	con.fecha,tp.nombre, tpers.nombre
+order by 
+	tp.nombre]]>
+	</queryString>
+	<field name="vistos" class="java.lang.Long"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="tiposervicio" class="java.lang.String"/>
+	<field name="tipopersona" class="java.lang.String"/>
+	<title>
+		<band height="232" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="535" height="56"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Headers.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="56" width="535" height="70"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDAD POLITÉCNICA TERRITORIAL DE YARACUY “ARÍSTIDES BASTIDAS”
+ AV. ARTURO USLAR PIETRI C/AV INTERCOMUNAL JOSÉ ANTONIO PÁEZ
+UNIDAD DE RECURSOS HUMANOS
+SERVICIO MEDICO ]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="126" width="535" height="106"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="primerafecha1">
+					<subreportParameterExpression><![CDATA[$P{primerafecha}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ultimafecha1">
+					<subreportParameterExpression><![CDATA[$P{ultimafecha}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "MorbilidadMedica_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="39">
+			<staticText>
+				<reportElement x="270" y="19" width="182" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="126" y="19" width="144" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Servicio ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="487" y="19" width="48" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vistos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="19" width="126" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="126" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detallado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Immediate">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="12"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="0" width="144" height="12"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tiposervicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="0" width="182" height="12"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipopersona}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="487" y="0" width="48" height="12"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{vistos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<elementGroup>
+				<staticText>
+					<reportElement x="10" y="20" width="87" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Universidad Politécnica Territorial de Yaracuy "Arístides Bastidas"]]></text>
+				</staticText>
+				<line>
+					<reportElement x="98" y="20" width="1" height="20"/>
+				</line>
+				<staticText>
+					<reportElement x="103" y="20" width="87" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="false" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Avenida Alberto Ravell con Avenida José Páez, Municipio Independencia, estado Yaracuy
+San Felipe, Venezuela]]></text>
+				</staticText>
+			</elementGroup>
+			<textField>
+				<reportElement x="515" y="20" width="20" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

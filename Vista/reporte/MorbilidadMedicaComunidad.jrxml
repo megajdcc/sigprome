@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="40" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true">
+	<property name="ireport.zoom" value="1.6500000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="583"/>
+	<property name="net.sf.jasperreports.chart.theme" value="aegean"/>
+	<subDataset name="Comunidad">
+		<parameter name="tipoperson1" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="primerafecha1" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ultimafecha1" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select count(p.cedula) as vistos,tp.nombre as tiposervicio,tpers.nombre as tipopersona from persona as p
+join 
+	tipopersona as tpers on(p.id_tipopersona = tpers.id)
+join
+	paciente as pac on(p.cedula = pac.cedula)
+join 
+	servicio as ser on(pac.id = ser.id_paciente)
+join
+	tiposervicio as tp on(ser.id_tipo_servicio = tp.id) 
+join 
+	triaje as tri on(ser.id = tri.id_servicio)
+join 
+	consulta as con on(tri.id = con.id_triaje)
+where 
+	con.fecha BETWEEN $P{primerafecha1} and $P{ultimafecha1}
+	and tpers.nombre = $P{tipoperson1}
+group by 
+	tp.nombre,tpers.nombre
+order by 
+	tp.nombre]]>
+		</queryString>
+		<field name="vistos" class="java.lang.Long"/>
+		<field name="tiposervicio" class="java.lang.String"/>
+		<field name="tipopersona" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="porsector">
+		<parameter name="primerafecha3" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ultimafecha3" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="tipoperson3" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select count(p.cedula) as vistos,tp.nombre as tiposervicio, mun.nombre as municipio, est.nombre as estado from persona as p
+join 
+	tipopersona as tpers on(p.id_tipopersona = tpers.id)
+join
+	parroquia as parr on(p.id_parroquia = parr.id)
+join 
+	municipio as mun on(parr.idmunicipio = mun.id)
+join
+	estado as est on(mun.idestado = est.id)
+join
+	paciente as pac on(p.cedula = pac.cedula)
+join 
+	servicio as ser on(pac.id = ser.id_paciente)
+join
+	tiposervicio as tp on(ser.id_tipo_servicio = tp.id) 
+join 
+	triaje as tri on(ser.id = tri.id_servicio)
+join 
+	consulta as con on(tri.id = con.id_triaje)
+where 
+	con.fecha BETWEEN $P{primerafecha3} and $P{ultimafecha3} and tpers.nombre = $P{tipoperson3}
+group by 
+	tp.nombre,mun.nombre,est.nombre
+order by 
+	mun.nombre]]>
+		</queryString>
+		<field name="vistos" class="java.lang.Long"/>
+		<field name="tiposervicio" class="java.lang.String"/>
+		<field name="municipio" class="java.lang.String"/>
+		<field name="estado" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="confechas">
+		<parameter name="primerafecha4" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="ultimafecha4" class="java.util.Date">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="tipoperson4" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select count(p.cedula) as vistos, con.fecha as fecha, tp.nombre as tiposervicio from persona as p
+join 
+	tipopersona as tpers on(p.id_tipopersona = tpers.id)
+join
+	paciente as pac on(p.cedula = pac.cedula)
+join 
+	servicio as ser on(pac.id = ser.id_paciente)
+join
+	tiposervicio as tp on(ser.id_tipo_servicio = tp.id) 
+join 
+	triaje as tri on(ser.id = tri.id_servicio)
+join 
+	consulta as con on(tri.id = con.id_triaje)
+where 
+	con.fecha BETWEEN $P{primerafecha4} and  $P{ultimafecha4}
+	and tpers.nombre = $P{tipoperson4}
+group by 
+	con.fecha,tp.nombre
+order by 
+	tp.nombre]]>
+		</queryString>
+		<field name="vistos" class="java.lang.Long"/>
+		<field name="fecha" class="java.sql.Date"/>
+		<field name="tiposervicio" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["A:\\Documents\\Programacion\\Sigprome\\src\\Vista\\reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="primerafecha" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ultimafecha" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tipoperson" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select count(p.cedula) as vistos,to_char(con.fecha, 'DD/MM/YYYY') as fecha, tp.nombre as tiposervicio, mun.nombre as municipio, est.nombre as estado from persona as p
+join 
+	tipopersona as tpers on(p.id_tipopersona = tpers.id)
+join
+	parroquia as parr on(p.id_parroquia = parr.id)
+join
+	municipio as mun on(parr.idmunicipio = mun.id)
+join
+	estado as est on(mun.idestado = est.id)
+join
+	paciente as pac on(p.cedula = pac.cedula)
+join 
+	servicio as ser on(pac.id = ser.id_paciente)
+join
+	tiposervicio as tp on(ser.id_tipo_servicio = tp.id) 
+join 
+	triaje as tri on(ser.id = tri.id_servicio)
+join 
+	consulta as con on(tri.id = con.id_triaje)
+where 
+	con.fecha BETWEEN $P{primerafecha} and $P{ultimafecha}
+	and tpers.nombre = $P{tipoperson}
+group by 
+	con.fecha,tp.nombre,mun.nombre,est.nombre
+order by 
+	tp.nombre]]>
+	</queryString>
+	<field name="vistos" class="java.lang.Long"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="tiposervicio" class="java.lang.String"/>
+	<field name="municipio" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<title>
+		<band height="534" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="535" height="56"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "Headers.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="56" width="535" height="70"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDAD POLITÉCNICA TERRITORIAL DE YARACUY “ARÍSTIDES BASTIDAS”
+ AV. ARTURO USLAR PIETRI C/AV INTERCOMUNAL JOSÉ ANTONIO PÁEZ
+UNIDAD DE RECURSOS HUMANOS
+SERVICIO MEDICO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="126" width="129" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[MORBÍLIDAD MEDICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="146" width="167" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Gráfica General]]></text>
+			</staticText>
+			<bar3DChart>
+				<chart evaluationTime="Report" theme="default">
+					<reportElement x="0" y="166" width="535" height="108"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend position="Right"/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="Comunidad">
+							<datasetParameter name="tipoperson1">
+								<datasetParameterExpression><![CDATA[$P{tipoperson}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="primerafecha1">
+								<datasetParameterExpression><![CDATA[$P{primerafecha}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ultimafecha1">
+								<datasetParameterExpression><![CDATA[$P{ultimafecha}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{tipopersona}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{tiposervicio}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{vistos}]]></valueExpression>
+						<labelExpression><![CDATA[$F{vistos}+""]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot isShowLabels="true" xOffset="10.0" yOffset="10.0">
+					<plot labelRotation="0.0"/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					<categoryAxisFormat labelRotation="0.0">
+						<axisFormat verticalTickLabels="false">
+							<labelFont/>
+							<tickLabelFont>
+								<font fontName="Serif" isItalic="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat verticalTickLabels="false">
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+			<subreport>
+				<reportElement x="248" y="146" width="287" height="20"/>
+				<subreportParameter name="primerafecha2">
+					<subreportParameterExpression><![CDATA[$P{primerafecha}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="segundafecha2">
+					<subreportParameterExpression><![CDATA[$P{ultimafecha}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "fechasdemorbilidad.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="274" width="206" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Gráfica por sector]]></text>
+			</staticText>
+			<bar3DChart>
+				<chart evaluationTime="Report" theme="default">
+					<reportElement x="0" y="294" width="535" height="108"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend position="Bottom"/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="porsector">
+							<datasetParameter name="primerafecha3">
+								<datasetParameterExpression><![CDATA[$P{primerafecha}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ultimafecha3">
+								<datasetParameterExpression><![CDATA[$P{ultimafecha}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="tipoperson3">
+								<datasetParameterExpression><![CDATA[$P{tipoperson}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{municipio} + ": "+$F{estado}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{tiposervicio}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{vistos}]]></valueExpression>
+						<labelExpression><![CDATA[$F{vistos}+""]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot isShowLabels="true">
+					<plot/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont>
+								<font fontName="Serif" isItalic="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+			<timeSeriesChart>
+				<chart evaluationTime="Report" renderType="draw" theme="default">
+					<reportElement x="0" y="422" width="535" height="108"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend position="Right"/>
+				</chart>
+				<timeSeriesDataset>
+					<dataset>
+						<datasetRun subDataset="confechas">
+							<datasetParameter name="primerafecha4">
+								<datasetParameterExpression><![CDATA[$P{primerafecha}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="ultimafecha4">
+								<datasetParameterExpression><![CDATA[$P{ultimafecha}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="tipoperson4">
+								<datasetParameterExpression><![CDATA[$P{tipoperson}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+					</dataset>
+					<timeSeries>
+						<seriesExpression><![CDATA[$F{tiposervicio}]]></seriesExpression>
+						<timePeriodExpression><![CDATA[$F{fecha}]]></timePeriodExpression>
+						<valueExpression><![CDATA[$F{vistos}]]></valueExpression>
+						<labelExpression><![CDATA[$F{vistos}+""]]></labelExpression>
+					</timeSeries>
+				</timeSeriesDataset>
+				<timeSeriesPlot isShowLines="true" isShowShapes="true">
+					<plot/>
+					<timeAxisFormat>
+						<axisFormat verticalTickLabels="false">
+							<labelFont/>
+							<tickLabelFont>
+								<font fontName="Serif" isItalic="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</timeAxisFormat>
+					<valueAxisFormat>
+						<axisFormat verticalTickLabels="false">
+							<labelFont/>
+							<tickLabelFont>
+								<font fontName="Serif" isItalic="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</timeSeriesPlot>
+			</timeSeriesChart>
+			<staticText>
+				<reportElement x="0" y="402" width="206" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Gráfica por fechas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="39">
+			<staticText>
+				<reportElement x="389" y="19" width="98" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Servicio ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="487" y="19" width="48" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vistos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="19" width="97" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="126" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detallado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="19" width="106" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Municipio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="19" width="133" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Immediate">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="12"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="487" y="0" width="48" height="15"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{vistos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="133" height="12"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="0" width="106" height="12"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{municipio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="0" width="98" height="12"/>
+				<textElement>
+					<font fontName="Times New Roman" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tiposervicio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<elementGroup>
+				<staticText>
+					<reportElement x="10" y="20" width="87" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Universidad Politécnica Territorial de Yaracuy "Arístides Bastidas"]]></text>
+				</staticText>
+				<line>
+					<reportElement x="98" y="20" width="1" height="20"/>
+				</line>
+				<staticText>
+					<reportElement x="103" y="20" width="87" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="5" isBold="false" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Avenida Alberto Ravell con Avenida José Páez, Municipio Independencia, estado Yaracuy
+San Felipe, Venezuela]]></text>
+				</staticText>
+			</elementGroup>
+			<textField>
+				<reportElement x="515" y="20" width="20" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

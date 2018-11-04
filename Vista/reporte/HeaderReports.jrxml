@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="285" pageHeight="375" whenNoDataType="AllSectionsNoDetail" columnWidth="285" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c7fe4a08-8a5b-4303-9310-4cc9b3f3a261">
+	<property name="ireport.zoom" value="2.9282000000000132"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logogobierno" class="java.io.InputStream"/>
+	<parameter name="logo200anos" class="java.io.InputStream"/>
+	<parameter name="logouptyab" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="33" splitType="Stretch">
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="6" width="38" height="21" uuid="0900668d-906f-4320-b7ea-459fa3841a09"/>
+				<imageExpression><![CDATA[$P{logogobierno}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="38" y="6" width="1" height="21" uuid="b662ef51-5bb8-4a53-9c86-5a119d3db63d"/>
+			</line>
+			<staticText>
+				<reportElement x="39" y="6" width="72" height="21" uuid="0445d948-1157-48d7-9a73-d229cff4b629"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Bell MT" size="5" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Ministerio del Poder Popular para la educación Universitaría Ciencia y Tecnología]]></text>
+			</staticText>
+			<line>
+				<reportElement x="117" y="6" width="1" height="21" uuid="794dfd9e-de55-4bd6-b0c5-8805b6343a56"/>
+			</line>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="124" y="6" width="43" height="21" uuid="fe5a8f66-9fbf-425a-974c-24e27b6d21f5"/>
+				<imageExpression><![CDATA[$P{logouptyab}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="172" y="6" width="79" height="21" uuid="0c59eaf8-f948-4583-bcaf-9b478da1ed59"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Bell MT" size="5" isBold="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Universidad Politécnica Territorial de Yaracuy "Arístides Bastídas"]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement stretchType="RelativeToBandHeight" x="251" y="6" width="34" height="21" uuid="f66792f7-7079-4f7c-9ae7-062ca56ca117"/>
+				<imageExpression><![CDATA[$P{logo200anos}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="29" width="285" height="1" forecolor="#FF6600" uuid="e5f0c182-92d3-4344-ab14-44ab9f6d8b90"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="30" width="285" height="1" forecolor="#141F78" uuid="43634796-335f-48f0-8897-3a65acb8c95a"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+</jasperReport>

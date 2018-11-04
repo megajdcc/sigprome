@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="recipe_subreport1" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="762"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idusuariosureport" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select p.cedula as cedulausuario, (p.nombre||''||p.apellido) as dato, esp.nombre as nombreespecialidad, tp.nombre as tipousuario
+from
+	persona as p
+join
+	usuario as u on(p.cedula = u.cedula_persona)
+join 
+
+	tipousuario as tp on(u.idtipousuario = tp.id)
+join 
+	especialidad as esp on(u.idespecialidad = esp.id)
+where 
+	u.id = $P{idusuariosureport}]]>
+	</queryString>
+	<field name="cedulausuario" class="java.lang.Long"/>
+	<field name="dato" class="java.lang.String"/>
+	<field name="nombreespecialidad" class="java.lang.String"/>
+	<field name="tipousuario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageFooter>
+		<band height="53" splitType="Stretch">
+			<line>
+				<reportElement x="197" y="0" width="161" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="197" y="1" width="161" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombreespecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="15" width="161" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dato}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

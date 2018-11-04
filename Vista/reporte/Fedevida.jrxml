@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="305" pageHeight="395" whenNoDataType="AllSectionsNoDetail" columnWidth="285" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="ffb08341-30aa-4a9f-bed9-d6fe69bebe53">
+	<property name="ireport.zoom" value="1.7715610000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="54"/>
+	<parameter name="cedula" class="java.lang.Long"/>
+	<parameter name="condicionsalud" class="java.lang.String"/>
+	<parameter name="logogobierno1" class="java.io.InputStream"/>
+	<parameter name="logouptyab1" class="java.io.InputStream"/>
+	<parameter name="logo200anos1" class="java.io.InputStream"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["A:\\Documents\\Programacion\\Sigprome\\src\\Vista\\reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dia" class="java.lang.Integer"/>
+	<parameter name="mes" class="java.lang.String"/>
+	<parameter name="anos" class="java.lang.Integer"/>
+	<parameter name="header" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select (p.nombre || ' ' || p.apellido) as nombre,
+p.cedula,
+(date_part('year',age(p.fecha_nacimiento)) :: int) as edad
+from persona as p  where p.cedula = $P{cedula}]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="cedula" class="java.lang.Long"/>
+	<field name="edad" class="java.lang.Integer"/>
+	<variable name="condicion" class="java.lang.String">
+		<variableExpression><![CDATA[$P{condicionsalud}]]></variableExpression>
+	</variable>
+	<variable name="dia" class="java.lang.Integer">
+		<variableExpression><![CDATA[$P{dia}]]></variableExpression>
+	</variable>
+	<variable name="mes" class="java.lang.String">
+		<variableExpression><![CDATA[$P{mes}]]></variableExpression>
+	</variable>
+	<variable name="anos" class="java.lang.Integer">
+		<variableExpression><![CDATA[$P{anos}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="41" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="285" height="41" uuid="5043d6f9-e9e8-4246-b65a-dc3bbcb2683d"/>
+				<subreportParameter name="logouptyab">
+					<subreportParameterExpression><![CDATA[$P{logouptyab1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="logo200anos">
+					<subreportParameterExpression><![CDATA[$P{logo200anos1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="logogobierno">
+					<subreportParameterExpression><![CDATA[$P{logogobierno1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{header}]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="285" height="40" uuid="9dcc54f7-4b07-4454-83a0-322b65f35d55"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDAD POLITÉCNICA TERRITORIAL DE YARACUY “ARÍSTIDES BASTIDAS”
+AV. ARTURO USLAR PIETRI C/AV . INTERCOMUNAL JOSÉ ANTONIO PÁEZ
+UNIDAD DE RECURSOS HUMANOS
+SERVICIO MEDICO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="285" height="17" uuid="dd5e9e0b-6ab7-4d16-8c42-205fd0fceec6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA FE DE VIDA]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="49" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="285" height="49" uuid="c1bd8d4f-bb95-41fd-b110-aa75fa1f7a96"/>
+				<textElement textAlignment="Justified">
+					<paragraph firstLineIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El suscrito certifica que el Sr. (a) " +$F{nombre}+ " de cédula de identidad " + $F{cedula} + " y con una edad de " +$F{edad}+ " años"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="112" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="285" height="112" uuid="63f70513-c191-4432-846b-d4ea8c97c91b"/>
+				<textElement textAlignment="Justified">
+					<paragraph firstLineIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Se encuentra con vida presentando la siguiente condición de salud: "+$V{condicion}.toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="103" y="16" width="100" height="20" isPrintInFirstWholeBand="true" uuid="5c716147-c304-4d57-9f3c-4b5a48c36e7b"/>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="285" height="44" uuid="4e5ad7d9-4006-460a-abff-7e004767a16b"/>
+				<textElement textAlignment="Justified">
+					<paragraph firstLineIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Constancia que se expide a petición de la parte interesada a los "+$V{dia}+" dias del mes de "+$V{mes}+" del año "+$V{anos}+" ."]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

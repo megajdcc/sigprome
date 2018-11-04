@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Recipe" pageWidth="305" pageHeight="395" whenNoDataType="AllSectionsNoDetail" columnWidth="285" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="e88eb358-8438-41ce-b00b-888d6763b575">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idconsulta" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["A:\\Documents\\Programacion\\Sigprome\\src\\Vista\\reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="header" class="java.io.InputStream"/>
+	<parameter name="logogobierno" class="java.io.InputStream"/>
+	<parameter name="logoupt" class="java.io.InputStream"/>
+	<parameter name="logo200anos" class="java.io.InputStream"/>
+	<parameter name="pagefooter" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select (p.nombre || ' ' || p.apellido) as nombrecompleto,p.cedula,u.rif , u.mpps, to_char(c.fecha,'DD/MM/YYYY') as fecha, r.dias ,r.motivo,c.id as idcons
+	from persona as p 
+	join usuario as u on(p.cedula = u.cedula_persona)
+	join consulta as c on(u.id = c.id_usuario)
+	join reposo as r on(c.id = r.id_consulta)
+where c.id = $P{idconsulta};]]>
+	</queryString>
+	<field name="nombrecompleto" class="java.lang.String"/>
+	<field name="cedula" class="java.lang.Long"/>
+	<field name="rif" class="java.lang.Long"/>
+	<field name="mpps" class="java.lang.Integer"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="dias" class="java.lang.Integer"/>
+	<field name="motivo" class="java.lang.String"/>
+	<field name="idcons" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="33" splitType="Stretch">
+			<subreport>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="285" height="33" uuid="71ebf960-0a8c-403a-973f-9d60509c88ea"/>
+				<subreportParameter name="logouptyab">
+					<subreportParameterExpression><![CDATA[$P{logoupt}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="logo200anos">
+					<subreportParameterExpression><![CDATA[$P{logo200anos}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="logogobierno">
+					<subreportParameterExpression><![CDATA[$P{logogobierno}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{header}]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="285" height="46" uuid="cae90825-21bc-4b45-8022-cf08baee4d3e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDAD POLITÉCNICA TERRITORIAL DE YARACUY “ARÍSTIDES BASTIDAS”
+AV. ARTURO USLAR PIETRI C/AV . INTERCOMUNAL JOSÉ ANTONIO PÁEZ
+UNIDAD DE RECURSOS HUMANOS
+SERVICIO MEDICO ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="201" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="68" height="10" uuid="881577f4-5be3-4caf-a083-606efbb9f4ca"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL MEDICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="79" height="10" uuid="1e1fd912-60a5-463d-a4fb-6312ab0dca4a"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[NOMBRE Y APELLIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="21" height="10" uuid="fc1401d0-a842-4d20-9d09-d75e7dd57a60"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Nº C.I.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="21" y="20" width="58" height="10" uuid="2ff6af99-dfb0-46dc-b6d7-942b2a3f9c15"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="79" y="20" width="29" height="10" uuid="f0e11c66-fe9f-4b66-8f54-51b25e2e09d4"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[M.P.P.S]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="108" y="20" width="66" height="10" uuid="f6169755-98a7-415e-9479-fa73168fd134"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mpps}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="212" y="20" width="29" height="10" uuid="93c0965c-cc15-43d9-9c09-e89dc403d379"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Nº RIF]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="241" y="20" width="44" height="10" uuid="40d8e4e8-c8b6-4c9b-952d-86b33207b96b"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rif}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="62" width="58" height="17" uuid="51c1825e-610d-4dee-90e7-bdfb4c527ddc"/>
+				<textElement>
+					<font fontName="French Script MT" size="12" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Reposo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="39" width="48" height="17" uuid="689cfcad-d95b-4d1f-a6f2-34bf6aac9332"/>
+				<textElement>
+					<font fontName="French Script MT" size="12" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[San felipe ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="39" width="66" height="17" uuid="b0c501da-702a-4c90-b781-2a590e15b8e3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="8" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Dias de reposo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="79" y="10" width="206" height="10" uuid="641501b0-51ff-4c69-be66-ad046cc3ce78"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombrecompleto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="39" width="57" height="17" uuid="be2172fa-0610-4422-ad94-60e4bd798a27"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dias}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="79" width="285" height="122" uuid="27e5b493-d89f-430b-b290-83c410fe4125"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{motivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="39" width="100" height="17" uuid="97a4c4ed-2734-4c87-a495-5294993f0809"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="60" splitType="Stretch">
+			<subreport>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="285" height="59" uuid="caf70ec4-f815-4bb9-aa62-de71a330bbbf"/>
+				<subreportParameter name="idconsultap">
+					<subreportParameterExpression><![CDATA[$P{idconsulta}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{pagefooter}]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>
